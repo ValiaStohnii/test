@@ -3,12 +3,24 @@ import Modal from './modal/modal'
 import './App.css';
 
 function App() {
-  const [modalActive, setModalActive]=useState(true)
+  const [showModal, setShowModal] = useState(false);
+
+  const toggleShowModal = () => {
+    setShowModal(state => !state);
+  };
+
+  const toggleModal = () => {
+    setShowModal(state => !state);
+
+  };
+
   return (
     <div className="App">
-     <button >modal</button>
-     <Modal active={modalActive} setActive={setModalActive}></Modal>
-    </div>
+     <button type='button' onClick={toggleModal}>modal</button>
+     {showModal && (
+     <Modal toggleModal={toggleModal} ></Modal>
+     )}
+     </div>
   );
 }
 

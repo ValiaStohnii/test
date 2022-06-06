@@ -6,17 +6,17 @@ import { createPortal } from 'react-dom';
 
 const modalRoot = document.querySelector('#modal-root');
 
-const modal=({active,setActive})=>{
+const modal=({toggleModal})=>{
   return createPortal(
-    <Overlay>
-      <Modal>
+    <Overlay >
+      <Modal >
         <Content>
       <Title>Choose rating of the book</Title>
       <Stars>*****</Stars>
       <Resume>Resume</Resume>
       <Textarea placeholder='...'></Textarea>
       <Buttons>
-        <Back type='submit'>Back</Back>
+        <Back onClick={toggleModal} type='submit'>Back</Back>
         <Save type='submit'>Save</Save>
       </Buttons>
       </Content>
