@@ -17,10 +17,10 @@ visibility: hidden;
 top:0;
 left:0;
 
-:checked,
-:checked ~ ${Star}{
-    color: #FF6B08;
-}
+// :checked,
+// :checked ~ {
+//     color: #FF6B08;
+// }
 `
 export const Star = styled.label`
 flex: 0 0 20%;

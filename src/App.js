@@ -1,6 +1,7 @@
 import { useState } from 'react';
 import Modal from './modal/modal'
 import RaitingStars from './modal/raitingStars'
+import LogoutModal from './modal/LogoutModal'
 import './App.css';
 
 import {Title,Content, 
@@ -9,6 +10,11 @@ import {Title,Content,
 
 function App() {
   const [showModal, setShowModal] = useState(false);
+  const [logoutModal,setLogoutModal]=useState(false);
+
+  const toggleLogoutModal=()=>{
+    setLogoutModal(state=>!state)
+  };
 
   const toggleModal = () => {
     setShowModal(state => !state);
@@ -16,7 +22,12 @@ function App() {
 
   return (
     <div className="App">
-      <button>log out</button>
+      <button type='button' onClick={toggleLogoutModal}>log out</button>
+      {logoutModal&&(
+        <Modal onClose={toggleLogoutModal}>
+          <LogoutModal toggleLogoutModal={toggleLogoutModal}/>
+        </Modal>
+      )}
      <button type='button' onClick={toggleModal}>modal</button>
      {showModal && (
      <Modal onClose={toggleModal} >

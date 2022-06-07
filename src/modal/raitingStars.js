@@ -8,7 +8,7 @@ const raitingStars=()=>{
     <Star for='star_5'></Star>
     <Input id='star_4' type='radio' name='raiting-star' value='4'></Input>
     <Star for='star_4'></Star>
-    <Input id='star_3' type='radio' checked name='raiting-star' value='3'></Input>
+    <Input id='star_3' type='radio' name='raiting-star' value='3'></Input>
     <Star for='star_3'></Star>
     <Input id='star_2' type='radio' name='raiting-star' value='2'></Input>
     <Star for='star_2'></Star>
