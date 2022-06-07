@@ -15,28 +15,22 @@ position: fixed;
     opacity: 1;
   transition: opacity 250ms var(--cubic);
 `
-export const Modal= styled.div`
-width: 280px;
-height: 395px;
+
+export const Modals= styled.div`
 background: #FFFFFF;
 box-shadow: 10px 10px 20px rgba(9, 30, 63, 0.2);
-
-@media screen and (min-width: 768px) {
-  width: 608px;
-height: 399px;
-}
-
-@media screen and (min-width: 1280px) {
-  width: 608px;
-height: 399px;
-}
-
 `
+
 export const Content = styled.div`
 padding-top: 20px;
   padding-left: 20px;
   padding-right: 20px;
   padding-bottom: 40px;
+  
+
+background: #FFFFFF;
+box-shadow: 10px 10px 20px rgba(9, 30, 63, 0.2);
+
 `
 
 export const Title = styled.p`
@@ -55,9 +49,13 @@ color: #242A37;
 }
 `
 export const Stars = styled.div`
-width: 101px;
-height: 17px;
 margin-bottom:20px;
+position: relative;
+font-size: 18px;
+color: #A6ABB9;
+::before{
+  content: '☆☆☆☆☆'
+}
 `
 export const Resume = styled.p`
 margin-top: 0;
