@@ -1,6 +1,5 @@
 import React from 'react'
 import {Raiting,Input,Star} from './raitingStars.styled'
-import svg from '../img/symbol-defs.svg#icon-raiting-stars'
 
 const raitingStars=()=>{
     return(

@@ -16,6 +16,7 @@ function App() {
 
   return (
     <div className="App">
+      <button>log out</button>
      <button type='button' onClick={toggleModal}>modal</button>
      {showModal && (
      <Modal onClose={toggleModal} >
