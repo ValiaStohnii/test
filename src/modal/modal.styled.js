@@ -53,9 +53,9 @@ margin-bottom:20px;
 position: relative;
 font-size: 18px;
 color: #A6ABB9;
-::before{
-  content: '☆☆☆☆☆'
-}
+// ::before{
+//   content: '☆☆☆☆☆'
+// }
 `
 export const Resume = styled.p`
 margin-top: 0;
