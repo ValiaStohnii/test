@@ -5,10 +5,13 @@ import LogoutModal from './modal/LogoutModal';
 import WellDoneModal from './modal/WellDoneModal';
 import CongratulationsModal from './modal/Congratulations'
 import './App.css';
+import { useFormik } from 'formik';
 
 import {Title,Content, 
     Stars, Resume, Textarea,
-    Buttons,Back,Save} from './modal/modal.styled'
+Buttons,Back,Save} from './modal/modal.styled'
+
+
 
 function App() {
   const [showModal, setShowModal] = useState(false);
@@ -31,6 +34,17 @@ const toggleCongratulationsModal =()=>{
   const toggleModal = () => {
     setShowModal(state => !state);
   };
+
+
+
+  const formik = useFormik({
+    initialValues: {
+      text: '',
+    },
+    onSubmit: values => {
+      console.log(values);
+    },
+  });
 
   return (
     <div className="App">
@@ -55,11 +69,11 @@ const toggleCongratulationsModal =()=>{
      <button type='button' onClick={toggleModal}>modal</button>
      {showModal && (
      <Modal onClose={toggleModal} >
-       <Content>
+       <Content onSubmit={formik.handleSubmit}>
           <Title>Choose rating of the book</Title>
-          <Stars><RaitingStars/></Stars>
+          <Stars><RaitingStars  onChange={formik.handleChange}/></Stars>
           <Resume>Resume</Resume>
-          <Textarea placeholder='...'></Textarea>
+          <Textarea value={formik.values.text} name='text' onChange={formik.handleChange} placeholder='...'></Textarea>
           <Buttons>
             <Back onClick={toggleModal} type='button'>Back</Back>
             <Save type='submit'>Save</Save>

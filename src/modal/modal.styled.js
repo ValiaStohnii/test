@@ -21,7 +21,7 @@ background: #FFFFFF;
 box-shadow: 10px 10px 20px rgba(9, 30, 63, 0.2);
 `
 
-export const Content = styled.div`
+export const Content = styled.form`
 padding-top: 20px;
   padding-left: 20px;
   padding-right: 20px;
